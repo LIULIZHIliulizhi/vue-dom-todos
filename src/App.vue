@@ -2,7 +2,7 @@
   <div class="todo-container">
     <div class="todo-wrap">
        <headers :addTodo="addTodo"/>
-       <Main :todos="todos"/>
+       <Main :todos="todos" :deleteTodo="deleteTodo"/>
        <footers/>
     </div>
   </div>
@@ -20,6 +20,14 @@ export default {
         {title:'睡觉',finish:false},
         {title:'上班',finish:true},
       ]
+    }
+  },
+  methods:{
+    addTodo(todo){
+      this.todos.unshift(todo)
+    },
+    deleteTodo(index){
+      this.todos.splice(index,1)
     }
   },
   components: {
