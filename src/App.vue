@@ -1,23 +1,34 @@
 <template>
-  <div>
-    <h2>这是第一个Vue项目</h2>
-    <img src="./assets/logo.png" alt="log" class="logo">
-    <HeaderWord/>
+  <div class="todo-container">
+    <div class="todo-wrap">
+     <headers  />
+     <Main/>
+     <footers/>
+    </div>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWord.vue'
+import Headers from './components/Header.vue';
+import Footers from './components/Footer.vue';
+import Main from './components/Main.vue'
 export default {
   components: {
-    HeaderWord: HelloWorld
+    Headers,
+    Footers,
+    Main
   }
 }
 </script>
 
 <style>
-  .logo{
-    width:200px;
-    height:200px;
+  .todo-container {
+    width: 600px;
+    margin: 0 auto;
+  }
+  .todo-container .todo-wrap {
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
   }
 </style>
