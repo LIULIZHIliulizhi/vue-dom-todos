@@ -3,10 +3,15 @@
     <ul>
       <li v-for="(m) in messages" :key="m.id">
         <router-link :to="`/home/message/detail/${m.id}`">{{m.title}}</router-link>
+        <button @click="pushWatch(m.id)">push查看</button>
+        <button @click="replaceWatch(m.id)">replace查看</button>
       </li>
     </ul>
+    <button @click="goBack">返回</button>
     <hr/>
-    <router-view/>
+    <keep-alive>
+      <router-view/>
+    </keep-alive>
   </div>
 </template>
 
@@ -26,6 +31,17 @@ export default {
       ]
       this.messages = messages
     }, 1000)
+  },
+  methods:{
+    pushWatch(id){
+    this.$router.push(`/home/message/detail/${id}`)
+    },
+    replaceWatch(id){
+    this.$router.replace(`/home/message/detail/${id}`)
+    },
+    goBack(){
+      this.$router.back()
+    }
   }
 }
 </script>

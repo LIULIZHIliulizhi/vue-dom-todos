@@ -17,7 +17,9 @@
         <div class="panel">
           <div class="panel-body">
             <div>
-              <router-view />
+              <keep-alive>
+                <router-view />
+              </keep-alive>
             </div>
           </div>
         </div>
