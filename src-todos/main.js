@@ -1,12 +1,10 @@
 import Vue from 'vue';
 import App from './App.vue';
-// 注册路由器
-import router from './router';
+import './index.css';
 new Vue({
   el: '#app',
   components: {
     App
   },
-  template: '<App/>',
-  router// 创建vue配置路由器
+  template: '<App/>'
 })
